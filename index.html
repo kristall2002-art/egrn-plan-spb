@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выписка из ЕГРН с планом квартиры | 700 ₽ | Санкт-Петербург</title>
+    <meta name="description" content="Официальная расширенная выписка из ЕГРН с графическим планом расположения квартиры на этаже. Характеристики, права, обременения и поэтажный план. 700 ₽. Доставка в Telegram или на Email. Санкт-Петербург и Ленобласть.">
+    <meta name="keywords" content="выписка ЕГРН с планом, план квартиры ЕГРН, расширенная выписка ЕГРН, поэтажный план ЕГРН, выписка из ЕГРН СПб, план расположения помещения на этаже, раздел 5 ЕГРН, кадастровый план квартиры">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Выписка из ЕГРН с планом квартиры | 700 ₽">
+    <meta property="og:description" content="Расширенная выписка из ЕГРН с графическим планом расположения квартиры на этаже. Санкт-Петербург и Ленобласть. Доставка в Telegram или на Email.">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Schema.org: Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Выписка из ЕГРН с планом квартиры",
+        "description": "Официальная расширенная выписка из ЕГРН об основных характеристиках и зарегистрированных правах на квартиру с графическим планом расположения помещения на этаже.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Сервис ЕГРН-план",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Санкт-Петербург",
+                "addressCountry": "RU"
+            }
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Санкт-Петербург"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "700",
+            "priceCurrency": "RUB",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy:   #14346e;
+            --navy-d: #0c224a;
+            --gold:   #d4af37;
+            --gold-l: #e8c84a;
+            --white:  #ffffff;
+            --gray-bg: #f4f6fb;
+            --gray-bg2: #eaecf4;
+            --text:   #1a2340;
+            --text-m: #4a5578;
+            --text-l: #7a87a8;
+            --border: #d0d8ee;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, Arial, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* ── NAV ────────────────────────────────── */
+        nav {
+            background: rgba(20, 52, 110, 0.97);
+            border-bottom: 2px solid var(--gold);
+            padding: 12px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: 0.2px;
+        }
+        nav a:hover { color: var(--gold); }
+
+        /* ── HERO ───────────────────────────────── */
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 64px 20px 56px;
+            overflow: hidden;
+            background: linear-gradient(160deg, var(--navy-d) 0%, var(--navy) 60%, #1a3f82 100%);
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 15% 40%, rgba(212,175,55,0.12) 0%, transparent 55%),
+                radial-gradient(circle at 85% 20%, rgba(212,175,55,0.07) 0%, transparent 50%),
+                radial-gradient(circle at 50% 90%, rgba(255,255,255,0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero > * { position: relative; z-index: 1; }
+
+        /* Logo */
+        .hero-logo {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            box-shadow: 0 0 0 6px rgba(212,175,55,0.18), 0 8px 32px rgba(0,0,0,0.35);
+            object-fit: cover;
+            margin-bottom: 24px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 16px;
+            background: rgba(212,175,55,0.15);
+            border: 1px solid rgba(212,175,55,0.4);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--gold);
+            margin-bottom: 18px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: clamp(26px, 5vw, 50px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--white);
+            max-width: 760px;
+        }
+        h1 span { color: var(--gold); }
+
+        .subtitle {
+            font-size: clamp(15px, 2vw, 17px);
+            color: rgba(255,255,255,0.72);
+            max-width: 580px;
+            margin-bottom: 36px;
+            line-height: 1.65;
+        }
+
+        /* Price hero */
+        .price-hero {
+            display: inline-block;
+            background: rgba(255,255,255,0.07);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 20px 52px;
+            margin-bottom: 36px;
+        }
+        .price-hero .amount {
+            font-size: 72px;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .price-hero .currency { font-size: 28px; color: rgba(255,255,255,0.6); }
+        .price-hero .label { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 4px; }
+
+        /* CTA */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 44px;
+            background: var(--gold);
+            color: var(--navy-d);
+            text-decoration: none;
+            border-radius: 14px;
+            font-size: 17px;
+            font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 24px rgba(212,175,55,0.4);
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 36px rgba(212,175,55,0.55);
+            background: var(--gold-l);
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: rgba(255,255,255,0.08);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.2s, background 0.2s;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+            transform: scale(1.03);
+        }
+        .btn-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* ── SECTIONS ─────────────────────────── */
+        section { padding: 72px 20px; }
+        section h2 {
+            font-size: clamp(22px, 4vw, 34px);
+            text-align: center;
+            margin-bottom: 12px;
+            color: var(--navy);
+            font-weight: 800;
+        }
+        .section-sub {
+            text-align: center;
+            color: var(--text-m);
+            font-size: 15px;
+            max-width: 560px;
+            margin: 0 auto 44px;
+            line-height: 1.6;
+        }
+        .section-gray { background: var(--gray-bg); }
+        .section-navy {
+            background: linear-gradient(135deg, var(--navy-d), var(--navy));
+            color: var(--white);
+        }
+        .section-navy h2 { color: var(--white); }
+        .section-navy .section-sub { color: rgba(255,255,255,0.65); }
+
+        /* ── WHAT YOU GET — cards ─────────────── */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            max-width: 1020px;
+            margin: 0 auto;
+        }
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px 24px;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 36px rgba(20,52,110,0.10);
+            border-color: var(--navy);
+        }
+        .card-icon { font-size: 36px; line-height: 1; margin-bottom: 14px; }
+        .card h3 { font-size: 17px; color: var(--navy); margin-bottom: 10px; font-weight: 700; line-height: 1.35; }
+        .card p { font-size: 14px; color: var(--text-m); line-height: 1.7; }
+
+        /* STAR card (highlighted) */
+        .card-star {
+            border-color: var(--gold);
+            background: linear-gradient(135deg, #fffdf2, #fff9e6);
+            position: relative;
+        }
+        .card-star::before {
+            content: '★ ГЛАВНАЯ ФИШКА';
+            position: absolute;
+            top: -12px; left: 20px;
+            background: var(--gold);
+            color: var(--navy-d);
+            font-size: 10px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 10px;
+            letter-spacing: 0.8px;
+        }
+        .card-star h3 { color: #7a5a00; }
+
+        /* ── DIFFERENCE BLOCK ─────────────────── */
+        .diff-table {
+            max-width: 720px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .diff-col {
+            border-radius: 16px;
+            padding: 28px 24px;
+        }
+        .diff-col-no {
+            background: #fff4f4;
+            border: 1px solid #f0c0c0;
+        }
+        .diff-col-yes {
+            background: #f0f8f0;
+            border: 1px solid #a8d5a8;
+        }
+        .diff-header {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .diff-col-no .diff-header { color: #c0392b; }
+        .diff-col-yes .diff-header { color: #27ae60; }
+        .diff-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .diff-list li {
+            font-size: 14px;
+            color: var(--text-m);
+            line-height: 1.55;
+            display: flex;
+            gap: 8px;
+        }
+        .diff-list li::before {
+            flex-shrink: 0;
+            font-size: 15px;
+            line-height: 1.4;
+        }
+        .diff-col-no .diff-list li::before { content: '✗'; color: #c0392b; }
+        .diff-col-yes .diff-list li::before { content: '✓'; color: #27ae60; }
+
+        /* ── HOW IT WORKS ─────────────────────── */
+        .steps {
+            display: flex;
+            gap: 0;
+            max-width: 860px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: calc(16.6% + 20px);
+            right: calc(16.6% + 20px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--navy), var(--gold));
+            opacity: 0.3;
+        }
+        .step {
+            flex: 1;
+            text-align: center;
+            padding: 0 12px;
+        }
+        .step-num {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 2px solid var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; font-weight: 800; color: var(--navy);
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 16px rgba(212,175,55,0.25);
+        }
+        .step h3 { font-size: 15px; color: var(--white); margin-bottom: 8px; font-weight: 700; }
+        .step p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+        /* ── SAMPLE BLOCK ─────────────────────── */
+        .sample-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px 40px;
+            text-align: center;
+        }
+        .sample-box .sample-icon { font-size: 48px; margin-bottom: 16px; }
+        .sample-box h3 { font-size: 20px; color: var(--navy); margin-bottom: 10px; font-weight: 700; }
+        .sample-box p { font-size: 14px; color: var(--text-m); margin-bottom: 24px; line-height: 1.65; }
+
+        /* ── FAQ ──────────────────────────────── */
+        .faq { max-width: 720px; margin: 0 auto; }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 22px 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h3 {
+            font-size: 16px;
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .faq-item p {
+            font-size: 14px;
+            color: var(--text-m);
+            line-height: 1.75;
+        }
+
+        /* ── ORDER SECTION ────────────────────── */
+        .order-section { text-align: center; background: var(--gray-bg); }
+        .order-box {
+            display: inline-block;
+            background: var(--white);
+            border: 2px solid var(--gold);
+            border-radius: 24px;
+            padding: 44px 56px;
+            max-width: 540px;
+            width: 100%;
+            box-shadow: 0 8px 40px rgba(20,52,110,0.10);
+        }
+        .order-price {
+            font-size: 76px;
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1;
+        }
+        .order-currency { font-size: 28px; color: var(--text-l); }
+        .order-note { font-size: 14px; color: var(--text-m); margin: 10px 0 28px; line-height: 1.5; }
+        .order-btns { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+        .order-btn-main {
+            display: inline-flex; align-items: center; gap: 12px;
+            width: 100%; max-width: 360px;
+            padding: 18px 28px;
+            background: var(--gold);
+            color: var(--navy-d);
+            text-decoration: none;
+            border-radius: 14px;
+            font-size: 17px; font-weight: 700;
+            transition: transform 0.2s, box-shadow 0.2s;
+            justify-content: center;
+            box-shadow: 0 4px 18px rgba(212,175,55,0.35);
+        }
+        .order-btn-main:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 32px rgba(212,175,55,0.55);
+            background: var(--gold-l);
+        }
+        .order-note-small { margin-top: 20px; font-size: 12px; color: var(--text-l); }
+
+        /* ── FOOTER ───────────────────────────── */
+        footer {
+            background: var(--navy-d);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 36px 20px;
+            font-size: 13px;
+            line-height: 1.9;
+            border-top: 2px solid var(--gold);
+        }
+        footer a { color: var(--gold); text-decoration: none; }
+        footer a:hover { color: var(--gold-l); text-decoration: underline; }
+        footer .footer-logo {
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            border: 2px solid rgba(212,175,55,0.4);
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        /* ── RESPONSIVE ───────────────────────── */
+        @media (max-width: 768px) {
+            .steps { flex-direction: column; gap: 28px; }
+            .steps::before { display: none; }
+            .diff-table { grid-template-columns: 1fr; }
+            .order-box { padding: 32px 24px; }
+            .order-price { font-size: 58px; }
+            .price-hero .amount { font-size: 56px; }
+            .price-hero { padding: 18px 36px; }
+        }
+        @media (max-width: 480px) {
+            .btn-primary, .btn-secondary {
+                font-size: 15px;
+                padding: 15px 24px;
+                width: 100%;
+                justify-content: center;
+            }
+            .btn-group { flex-direction: column; align-items: stretch; max-width: 320px; margin-left: auto; margin-right: auto; }
+            .sample-box { padding: 28px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Навигация">
+    <ul>
+        <li><a href="#what">Что получаете</a></li>
+        <li><a href="#diff">Чем отличается</a></li>
+        <li><a href="#how">Как заказать</a></li>
+        <li><a href="#sample">Образец</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+        <li><a href="#order">Заказать</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-overlay"></div>
+
+    <img src="img/logo.png" alt="Логотип ЕГРН-план" class="hero-logo">
+
+    <span class="badge">ЕГРН · Санкт-Петербург и Ленобласть</span>
+
+    <h1>Выписка из ЕГРН <span>с планом квартиры</span></h1>
+
+    <p class="subtitle">Официальная расширенная выписка с графическим планом расположения квартиры на этаже — тот самый «Раздел 5/8», которого нет в обычной онлайн-выписке с Госуслуг.</p>
+
+    <div class="price-hero">
+        <div class="amount">700 <span class="currency">₽</span></div>
+        <div class="label">полная расширенная выписка с планом</div>
+    </div>
+
+    <div class="btn-group">
+        <a href="https://t.me/egrn_plan_spb_bot?start=site" class="btn-primary" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            📄 Заказать в Telegram
+        </a>
+    </div>
+</header>
+
+<!-- WHAT YOU GET -->
+<section id="what" class="section-gray">
+    <h2>Что вы получаете</h2>
+    <p class="section-sub">PDF-документ с официальными сведениями Росреестра/ЕГРН по вашей квартире.</p>
+
+    <div class="cards-grid">
+
+        <div class="card">
+            <div class="card-icon">📐</div>
+            <h3>Характеристики объекта</h3>
+            <p>Площадь, назначение, этаж, кадастровый номер и кадастровая стоимость квартиры — официальные данные Росреестра.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🔏</div>
+            <h3>Права и обременения</h3>
+            <p>Сведения о зарегистрированных правах собственности, ипотеке, арестах и иных обременениях на дату выдачи выписки.</p>
+        </div>
+
+        <div class="card card-star">
+            <div class="card-icon">🗺️</div>
+            <h3>Графический план на этаже</h3>
+            <p>Поэтажный план здания с указанием расположения вашей квартиры — «Раздел 5/8: план расположения помещения на этаже». Именно он нужен для перепланировки, проекта, суда и сделок.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">✅</div>
+            <h3>Официальный документ ЕГРН</h3>
+            <p>Выписка имеет юридическую силу и принимается госорганами, судами, МВК, нотариусами и банками. Сведения актуальны на дату выдачи.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section id="diff">
+    <h2>Чем отличается от обычной выписки</h2>
+    <p class="section-sub">Стандартная выписка с Госуслуг не содержит графического плана — это принципиальное отличие.</p>
+
+    <div class="diff-table">
+        <div class="diff-col diff-col-no">
+            <div class="diff-header">
+                <span>✗</span> Обычная выписка с Госуслуг
+            </div>
+            <ul class="diff-list">
+                <li>Характеристики квартиры</li>
+                <li>Сведения о правах</li>
+                <li>Нет графического плана квартиры</li>
+                <li>Нет поэтажного плана расположения</li>
+            </ul>
+        </div>
+        <div class="diff-col diff-col-yes">
+            <div class="diff-header">
+                <span>✓</span> Расширенная выписка с планом
+            </div>
+            <ul class="diff-list">
+                <li>Характеристики квартиры</li>
+                <li>Сведения о правах и обременениях</li>
+                <li>Графический план квартиры на этаже</li>
+                <li>Раздел 5/8 — поэтажный план</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="section-navy">
+    <h2>Как заказать</h2>
+    <p class="section-sub" style="color: rgba(255,255,255,0.65);">Три простых шага — от адреса до готовой выписки.</p>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <h3>Укажите адрес</h3>
+            <p>Напишите в бот полный адрес квартиры: город, улица, дом, литера, номер квартиры. Больше ничего не нужно.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <h3>Оплатите 700 ₽</h3>
+            <p>Оплата через ЮKassa прямо в боте: банковская карта или СБП. Чек приходит автоматически.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <h3>Получите выписку</h3>
+            <p>Готовую выписку пришлём в Telegram или на Email — на выбор. Срок: от 1 до 3 рабочих дней.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SAMPLE -->
+<section id="sample" class="section-gray">
+    <h2>Образец выписки</h2>
+    <p class="section-sub">Хотите убедиться, как выглядит документ с планом? Запросите пример прямо в боте.</p>
+
+    <div class="sample-box">
+        <div class="sample-icon">📑</div>
+        <h3>Пример выписки с графическим планом</h3>
+        <p>Нажмите кнопку «📑 Образец выписки» в Telegram-боте — пришлём реальный пример расширенной выписки ЕГРН с планом расположения квартиры на этаже. Персональные данные скрыты.</p>
+        <a href="https://t.me/egrn_plan_spb_bot?start=site" class="btn-primary" target="_blank" rel="noopener"
+           style="font-size: 15px; padding: 14px 32px; margin: 0 auto; display: inline-flex;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            Открыть бот и запросить образец
+        </a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <h2>Часто задаваемые вопросы</h2>
+    <p class="section-sub"></p>
+    <div class="faq">
+
+        <div class="faq-item">
+            <h3>Что такое расширенная выписка из ЕГРН с планом?</h3>
+            <p>Это официальная выписка об основных характеристиках объекта недвижимости и зарегистрированных правах (форма по приказу Росреестра), которая содержит все разделы — в том числе «Раздел 5/8: план расположения помещения на этаже». В отличие от краткой онлайн-выписки с Госуслуг, этот документ включает графический поэтажный план, выполненный на основе технического плана БТИ.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Зачем нужен план квартиры на этаже?</h3>
+            <p>Поэтажный план нужен в нескольких ситуациях: согласование перепланировки (МВК, БТИ требуют план для сравнения фактической и проектной конфигурации), проектирование и строительные работы, сделки с недвижимостью (покупатель хочет видеть официальную конфигурацию), судебные споры, оформление наследства. В этих случаях именно расширенная выписка с планом имеет юридический вес.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Чем ваша выписка отличается от выписки с Госуслуг?</h3>
+            <p>На Госуслугах вы можете получить электронную выписку в формате XML/PDF — она содержит характеристики и сведения о правах, но <strong>не содержит графического плана</strong> помещения. Мы оформляем за вас расширенную выписку, которая включает раздел с поэтажным планом. Именно он нужен, когда требуется «выписка с планом».</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Какие данные о собственнике будут в выписке?</h3>
+            <p>В выписке указываются сведения о зарегистрированных правах: ФИО собственника (или организация), вид права (собственность, долевая и т. д.), дата и номер государственной регистрации, а также сведения об обременениях (ипотека, арест) при наличии. Объём данных соответствует официальному регламенту Росреестра.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Сколько действует выписка?</h3>
+            <p>Законодательно срок действия выписки не ограничен — документ подтверждает сведения на дату выдачи. На практике банки, нотариусы и госорганы принимают выписку, полученную не более 30 дней назад (иногда до 3 месяцев). Уточняйте требуемый срок в той организации, куда вы её предоставляете.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Как оплатить заказ?</h3>
+            <p>Оплата производится через ЮKassa прямо в Telegram-боте. Принимаются банковские карты (Visa, Mastercard, МИР) и оплата через СБП. Фискальный чек приходит автоматически на email или в Telegram после оплаты. Стоимость — 700 ₽ за одну выписку.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ORDER -->
+<section id="order" class="order-section">
+    <h2>Заказать выписку с планом</h2>
+    <p class="section-sub">Пришлите адрес квартиры — остальное сделаем за вас.</p>
+    <div class="order-box">
+        <div>
+            <span class="order-price">700</span>
+            <span class="order-currency"> ₽</span>
+        </div>
+        <p class="order-note">Расширенная выписка ЕГРН с графическим планом<br>Доставка в Telegram или на Email · 1–3 рабочих дня</p>
+        <div class="order-btns">
+            <a href="https://t.me/egrn_plan_spb_bot?start=site" class="order-btn-main" target="_blank" rel="noopener">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                📄 Заказать в Telegram
+            </a>
+        </div>
+        <p class="order-note-small">Нужен только полный адрес квартиры · Оплата ЮKassa · Чек автоматически</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <img src="img/logo.png" alt="Логотип" class="footer-logo">
+    <p>Сервис оформления выписок из ЕГРН · Санкт-Петербург и Ленинградская область</p>
+    <p>
+        Telegram-бот: <a href="https://t.me/egrn_plan_spb_bot" target="_blank" rel="noopener">@egrn_plan_spb_bot</a>
+        &nbsp;·&nbsp;
+        Email: <a href="mailto:plan_egrn@mail.ru">plan_egrn@mail.ru</a>
+    </p>
+    <p style="margin-top: 8px; font-size: 11px; color: rgba(255,255,255,0.25);">Информационный сервис · Не является органом государственной власти · Осуществляет помощь в оформлении официальных документов Росреестра</p>
+    <!-- TODO placeholders: канал Telegram = @..., группа ВК = vk.com/club... -->
+</footer>
+
+</body>
+</html>
