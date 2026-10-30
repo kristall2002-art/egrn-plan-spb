@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика обработки персональных данных | ЕГРН-план</title>
+    <meta name="description" content="Политика обработки персональных данных сервиса ЕГРН-план: заказ расширенной выписки из ЕГРН с планом квартиры.">
+    <meta name="robots" content="noindex, follow">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy:   #14346e;
+            --navy-d: #0c224a;
+            --gold:   #d4af37;
+            --gold-l: #e8c84a;
+            --white:  #ffffff;
+            --gray-bg: #f4f6fb;
+            --text:   #1a2340;
+            --text-m: #4a5578;
+            --text-l: #7a87a8;
+            --border: #d0d8ee;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, Arial, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* NAV */
+        nav {
+            background: rgba(20, 52, 110, 0.97);
+            border-bottom: 2px solid var(--gold);
+            padding: 12px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s;
+            letter-spacing: 0.2px;
+        }
+        nav a:hover { color: var(--gold); }
+
+        /* HERO */
+        .page-hero {
+            background: linear-gradient(160deg, var(--navy-d) 0%, var(--navy) 60%, #1a3f82 100%);
+            padding: 48px 20px 40px;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+        .page-hero h1 {
+            font-size: clamp(22px, 4vw, 36px);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+        .page-hero p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* CONTENT */
+        .content {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 48px 24px 64px;
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 36px;
+            padding: 8px 16px;
+            background: var(--gray-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .back-link:hover {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        /* Document sections */
+        .doc-section {
+            margin-bottom: 36px;
+        }
+
+        .doc-section h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--gold);
+            line-height: 1.3;
+        }
+
+        .doc-section h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 20px 0 10px;
+        }
+
+        .doc-section p {
+            font-size: 14px;
+            color: var(--text-m);
+            margin-bottom: 10px;
+            line-height: 1.75;
+        }
+
+        .doc-section ul, .doc-section ol {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        .doc-section li {
+            font-size: 14px;
+            color: var(--text-m);
+            margin-bottom: 6px;
+            line-height: 1.7;
+        }
+
+        /* Warning box */
+        .warning-box {
+            background: #fffbf0;
+            border: 1px solid #e0c060;
+            border-left: 4px solid var(--gold);
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin: 16px 0 20px;
+        }
+        .warning-box .warning-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #7a5a00;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .warning-box p {
+            font-size: 13px;
+            color: #6a5000;
+            margin-bottom: 0;
+            line-height: 1.7;
+        }
+
+        /* Placeholder */
+        .placeholder {
+            background: #fff3cd;
+            border: 1px dashed #d4af37;
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-style: italic;
+            color: #7a5a00;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        /* Divider between major doc blocks */
+        .doc-divider {
+            border: none;
+            border-top: 3px solid var(--navy);
+            margin: 52px 0 44px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-d);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 36px 20px;
+            font-size: 13px;
+            line-height: 1.9;
+            border-top: 2px solid var(--gold);
+        }
+        footer a { color: var(--gold); text-decoration: none; }
+        footer a:hover { color: var(--gold-l); text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            .content { padding: 32px 16px 48px; }
+            .page-hero { padding: 36px 16px 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Навигация">
+    <ul>
+        <li><a href="index.html">← На главную</a></li>
+        <li><a href="offerta.html">Оферта</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+    <h1>Политика обработки<br>персональных данных</h1>
+    <p>Сервис «ЕГРН-план» — заказ расширенной выписки из ЕГРН с планом квартиры. Редакция от 30 октября 2026 г.</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+    <a href="index.html" class="back-link">← Вернуться на главную</a>
+
+    <!-- По образцу privacy.html «Карты Парк Аватар» (тот же оператор); проверка «Анализа» 30.10.2026 -->
+    <div id="politika">
+        <div class="doc-section">
+            <h3>1. Кто обрабатывает данные</h3>
+            <p>Оператор — индивидуальный предприниматель Золотарёв Юрий Николаевич, ИНН 183474446770, ОГРНИП 320183200041847, адрес: 426073, г. Ижевск, ул. Молодёжная, д. 81, кв. 68. Регистрационный номер в реестре операторов персональных данных Роскомнадзора: 18-25-028274.</p>
+            <p>Связь по вопросам персональных данных: <a href="mailto:plan_egrn@mail.ru">plan_egrn@mail.ru</a> или кнопка «Задать вопрос» в наших ботах.</p>
+            <p>Политика составлена по Федеральному закону от 27.07.2006 № 152-ФЗ «О персональных данных» и относится к сайту <a href="https://kristall2002-art.github.io/egrn-plan-spb/">kristall2002-art.github.io/egrn-plan-spb</a>, ботам сервиса в Telegram (@egrn_plan_spb_bot) и MAX и нашим каналам.</p>
+
+            <h3>2. Какие данные мы обрабатываем</h3>
+            <ul>
+                <li>Адрес объекта недвижимости, который вы указали в заказе.</li>
+                <li>В ботах — идентификатор пользователя в Telegram или MAX, имя и имя пользователя из профиля; адрес электронной почты, если вы выбрали доставку на почту.</li>
+                <li>Ваши вопросы и сообщения нам и сведения, которые вы сами в них укажете, в том числе приложенные файлы.</li>
+                <li>Об оплате — номер заказа и платежа, сумма, статус и время. Данные банковской карты вы вводите на странице ЮKassa, мы их не получаем.</li>
+            </ul>
+            <p>Сайт данных не собирает: заказ и оплата идут в ботах.</p>
+
+            <h3>3. Зачем</h3>
+            <ul>
+                <li>Оформить заказ, заказать по нему выписку из ЕГРН, принять оплату и прислать готовую выписку.</li>
+                <li>Отправить кассовый чек, как требует закон о применении контрольно-кассовой техники.</li>
+                <li>Ответить на ваши вопросы и помочь, если оплата или доставка не прошли.</li>
+            </ul>
+
+            <h3>4. На каком основании</h3>
+            <p>Заказ, оплата, доставка выписки и ответы на вопросы — исполнение договора с вами (договора-оферты, п. 5 ч. 1 ст. 6 152-ФЗ); кассовый чек — обязанность по закону (п. 2 ч. 1 ст. 6 152-ФЗ). Отдельное согласие для этого не требуется.</p>
+
+            <h3>5. Кому передаём</h3>
+            <ul>
+                <li>Росреестру — адрес объекта, чтобы запросить сведения ЕГРН. Запрос по поручению Оператора делают его сотрудники или привлечённый кадастровый инженер; им передаются только адрес объекта и номер заказа.</li>
+                <li>ЮKassa (ООО НКО «ЮМани») — для оплаты и кассового чека.</li>
+                <li>Почта Mail.ru (ООО «ВК») — для отправки выписки на почту.</li>
+                <li>Хостинг netcup GmbH (Германия) — боты и база заказов работают на арендованном у него сервере, сервер размещён в Нидерландах; хостер хранит данные по поручению Оператора.</li>
+                <li>Боты и каналы работают на платформах Telegram и MAX; платформы обрабатывают данные по своим правилам.</li>
+            </ul>
+            <p>Больше никому данные не передаём и не продаём, кроме случаев, прямо предусмотренных законом.</p>
+
+            <h3>6. Сколько храним</h3>
+            <p>Персональные данные хранятся до исполнения заказа, а в составе документов бухгалтерского учёта — не дольше срока, установленного законодательством РФ о бухгалтерском учёте. По истечении срока или по вашему требованию данные удаляем.</p>
+
+            <h3>7. Ваши права</h3>
+            <p>Вы можете узнать, какие ваши данные у нас есть, потребовать их уточнить, заблокировать или уничтожить. Напишите на <a href="mailto:plan_egrn@mail.ru">plan_egrn@mail.ru</a> или нажмите «Задать вопрос» в боте — ответим в течение 10 рабочих дней. Данные, нужные для исполнения оплаченного заказа и бухгалтерского учёта, хранятся до окончания этих сроков.</p>
+
+            <h3>8. Как защищаем</h3>
+            <p>Доступ к данным есть только у Оператора и его администратора. Сервер защищён паролем и ключами доступа, сайт и платёжные страницы работают по защищённому протоколу HTTPS.</p>
+
+            <h3>9. Изменения</h3>
+            <p>Политику можем обновлять. Новая редакция действует с момента публикации на этой странице.</p>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link" style="margin-top: 12px;">← Вернуться на главную</a>
+
+</div><!-- /content -->
+
+<!-- FOOTER -->
+<footer>
+    <p>Сервис оформления выписок из ЕГРН · По всей России</p>
+    <p>
+        Telegram-бот: <a href="https://t.me/egrn_plan_spb_bot" target="_blank" rel="noopener">@egrn_plan_spb_bot</a>
+        &nbsp;·&nbsp;
+        Email: <a href="mailto:plan_egrn@mail.ru">plan_egrn@mail.ru</a>
+    </p>
+    <p style="margin-top: 8px; font-size: 11px; color: rgba(255,255,255,0.25);">Информационный сервис · Не является органом государственной власти · Осуществляет помощь в оформлении официальных документов Росреестра</p>
+</footer>
+
+</body>
+</html>
