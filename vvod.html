@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="robots" content="noindex">
+<title>Ввод адреса — выписка из ЕГРН</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<!-- Окошко ввода для Telegram-бота @egrn_plan_spb_bot (кнопка «📝 Ввести адрес» под полем ввода).
+     Что спросить — в адресе страницы: ?t=заголовок&h=пояснение&p=подсказка в поле. Ответ уходит боту
+     через Telegram.WebApp.sendData, окошко закрывается само. -->
+<style>
+  body { margin: 0; padding: 20px 16px; font: 17px/1.4 -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+         background: var(--tg-theme-bg-color, #fff); color: var(--tg-theme-text-color, #222); }
+  h1 { font-size: 21px; margin: 0 0 8px; }
+  p { margin: 0 0 14px; color: var(--tg-theme-hint-color, #777); font-size: 15px; }
+  textarea { box-sizing: border-box; width: 100%; min-height: 96px; padding: 12px; font: inherit; resize: vertical;
+             border: 2px solid var(--tg-theme-button-color, #2481cc); border-radius: 10px;
+             background: var(--tg-theme-secondary-bg-color, #f4f4f5); color: inherit; }
+  button { width: 100%; margin-top: 14px; padding: 14px; font: inherit; font-weight: 600; border: 0; border-radius: 10px;
+           background: var(--tg-theme-button-color, #2481cc); color: var(--tg-theme-button-text-color, #fff); }
+  button:disabled { opacity: .5; }
+  #err { color: #d33; font-size: 15px; margin-top: 8px; min-height: 1em; }
+</style>
+</head>
+<body>
+<h1 id="t">Адрес квартиры</h1>
+<p id="h">Город, улица, дом, квартира. Например: Санкт-Петербург, ул. Егорова, д. 18, кв. 32</p>
+<textarea id="a" placeholder="Город, улица, дом, квартира" autofocus></textarea>
+<div id="err"></div>
+<button id="go">Продолжить</button>
+<script>
+  const q = new URLSearchParams(location.search), tg = window.Telegram && Telegram.WebApp;
+  for (const [k, id] of [["t", "t"], ["h", "h"]]) if (q.get(k)) document.getElementById(id).textContent = q.get(k);
+  const a = document.getElementById("a"), go = document.getElementById("go"), err = document.getElementById("err");
+  if (q.get("p")) a.placeholder = q.get("p");
+  if (tg) { tg.ready(); tg.expand(); }
+  function send() {
+    const v = a.value.trim().replace(/\s+/g, " ");
+    if (!v) { err.textContent = "Впишите ответ в поле выше"; a.focus(); return; }
+    if (!tg || !tg.sendData) { err.textContent = "Откройте это окошко из бота в Telegram"; return; }
+    go.disabled = true;
+    tg.sendData(v.slice(0, 1000));
+  }
+  go.addEventListener("click", send);
+  a.addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } });
+  setTimeout(() => a.focus(), 300);
+</script>
+</body>
+</html>
