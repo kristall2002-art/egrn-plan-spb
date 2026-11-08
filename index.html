@@ -873,5 +873,44 @@
     <!-- TODO: группа ВК = vk.com/club... (создаст Дима) -->
 </footer>
 
+<script>
+// Анонимный счётчик посещений (Сергей через Проектирование, 08.11.2026): шлёт только событие — визит или переход
+// в бот — и откуда пришёл (поисковик, соцсеть, прямой заход). Без cookie, без хранилища браузера, без номеров посетителей;
+// посредник на rinazolotareva.ru пишет время, событие и источник и больше ничего (исходник: ~/egrn-monitor/regru-counter).
+(function () {
+    var URL_T = 'https://rinazolotareva.ru/egrn-api/track.php';
+    function source() {
+        try {
+            var u = (new URLSearchParams(location.search).get('utm_source') || '').toLowerCase();
+            var r = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : '';
+            if (r === location.hostname) r = '';
+            var s = u || r;
+            if (!s) return 'direct';
+            if (/yandex|(^|\.)ya\.ru$/.test(s)) return 'yandex';
+            if (/google/.test(s)) return 'google';
+            if (/(^|\.)t\.me$|telegram/.test(s)) return 'telegram';
+            if (/(^|\.)vk\.(com|ru)$|^vk$/.test(s)) return 'vk';
+            if (/(^|\.)max\.ru$|^max$/.test(s)) return 'max';
+            if (s === 'check') return 'check';
+            return u ? 'other' : 'referral';
+        } catch (e) { return 'direct'; }
+    }
+    var SRC = source();
+    function send(ev) {
+        var body = 'event=' + ev + '&source=' + SRC;
+        try {
+            fetch(URL_T, {method: 'POST', body: body, mode: 'no-cors', credentials: 'omit', keepalive: true,
+                          headers: {'Content-Type': 'application/x-www-form-urlencoded'}}).catch(function () {});
+        } catch (e) {}
+    }
+    send('visit');
+    document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a) return;
+        if (/t\.me\/egrn_plan_spb_bot/.test(a.href)) send('to_tg');
+        else if (/max\.ru\/id780453702801_2_bot/.test(a.href)) send('to_max');
+    }, true);
+})();
+</script>
 </body>
 </html>
